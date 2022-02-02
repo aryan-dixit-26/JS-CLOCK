@@ -7,8 +7,8 @@ const hourHand = document.querySelector('[data-hour-hand]');
 function setClock(){
     const dateAndTime = new Date();
     const secondRatio = dateAndTime.getSeconds()/ 60;
-    const minuteRatio = seconddateAndTime.getMinutes()/ 60;
-    const hourRatio = dateAndTime.getHours()/ 12;
+    const minuteRatio = (secondRatio + dateAndTime.getMinutes())/ 60;
+    const hourRatio = (minuteRatio + dateAndTime.getHours())/ 12;
 
     setRotation(secondHand, secondRatio);
     setRotation(minuteHand,minuteRatio);
